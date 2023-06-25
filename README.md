@@ -1,1 +1,1 @@
-Projrto desfio da Warmy.
+Projeto Desfio da Warmy.
