@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import TaskForm from './Components/TaskForm';
+import TaskList from './Components/TaskList/index.jsx';
+import PendingTasksCount from './Components/PendingTasksCount';
+import { GlobalStyle, Container, Title,BackgroundImage,CountersContainer } from './globalStyles';
+import { TaskProvider } from './Context/TaskContext/TaskContext';
+import CompletedTasksCount from './Components/CompletedTasksCount';
+import Footer from './Components/Footer';
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <TaskProvider>
+      <GlobalStyle />
+      <Container>
+      <BackgroundImage />
+        <Title>Lista de Tarefas</Title>
+        <TaskForm />
+        <TaskList />
+      </Container>
+      <CountersContainer>
+        <PendingTasksCount />
+        <CompletedTasksCount/>
+      </CountersContainer>
+     <Footer/>
+    </TaskProvider>
   );
 }
 
